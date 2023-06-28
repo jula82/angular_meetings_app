@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "meetings-f444d": {
+      "hosting": {
+        "meetings_task": [
+          "meetings-f444d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "meetings-f444d"
+  }
+}

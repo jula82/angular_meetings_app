@@ -1,0 +1,36 @@
+<p>shared works!</p>
+
+<!-- <app-button (click)="onSubmit()">Test Button</app-button> -->
+<app-button (click) = "onPatchValue()">Patch value</app-button>
+<br><br>
+
+<div class="wrapper">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+    <app-form-field label="Input" [required]="true" [control]="$any(form.controls).input" [patternError]="regexErrors.email">
+      <app-input formControlName="input"></app-input>
+    </app-form-field>
+
+    <app-form-field label="Select" [required]="true" [control]="$any(form.controls).select">
+      <app-select formControlName="select" [items]="items"></app-select>
+    </app-form-field>
+
+    <app-form-field label="Checkboxes" [required]="true" [control]="$any(form.controls).checkboxes">
+        <app-checkboxes formControlName="checkboxes" [items]="items"></app-checkboxes>
+    </app-form-field>
+
+    <app-form-field label="Date" [required]="true" [control]="$any(form.controls).date">
+      <app-date formControlName="date" placeholder="Date"></app-date>
+    </app-form-field>
+
+    <app-form-field label="Date Range" [required]="true" [control]="$any(form.controls).dateRange">
+      <app-date-range formControlName="dateRange"></app-date-range>
+    </app-form-field>
+
+  </form>
+  <app-button (click)="getForm()">FORM</app-button>
+
+  <code>
+    {{form.value | json}}
+  </code>
+</div>
